@@ -1,0 +1,19 @@
+~ run
+run
+compile
+last
+compile
+run --http.port=5432
+run 5432
+compile
+build
+compile
+run 5432
+compile
+run 5432
+compile
+eclipse with-source=true
+run 5432
+run 9000
+run 9090
+run

@@ -5,9 +5,9 @@ import java.util.*;
 import javax.persistence.*;
 
 import play.db.ebean.*;
-import play.data.format.Formats;
 import play.data.validation.*;
 
+@Entity 
 public class userModel extends Model {
 	
 	private static final long serialVersionUID = 1L;

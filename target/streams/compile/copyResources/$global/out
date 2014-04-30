@@ -1,3 +1,6 @@
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
 [0m[[0mdebug[0m] [0m	(/Users/mac/University/3_course/2sem/Java/DiagramCreator/conf/application.conf,/Users/mac/University/3_course/2sem/Java/DiagramCreator/target/scala-2.10/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/mac/University/3_course/2sem/Java/DiagramCreator/conf/evolutions,/Users/mac/University/3_course/2sem/Java/DiagramCreator/target/scala-2.10/classes/evolutions)[0m
 [0m[[0mdebug[0m] [0m	(/Users/mac/University/3_course/2sem/Java/DiagramCreator/conf/routes,/Users/mac/University/3_course/2sem/Java/DiagramCreator/target/scala-2.10/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/Users/mac/University/3_course/2sem/Java/DiagramCreator/conf/evolutions/default,/Users/mac/University/3_course/2sem/Java/DiagramCreator/target/scala-2.10/classes/evolutions/default)[0m
+[0m[[0mdebug[0m] [0m	(/Users/mac/University/3_course/2sem/Java/DiagramCreator/conf/evolutions/default/1.sql,/Users/mac/University/3_course/2sem/Java/DiagramCreator/target/scala-2.10/classes/evolutions/default/1.sql)[0m

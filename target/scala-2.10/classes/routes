@@ -5,8 +5,15 @@
 # Home page
 GET     /                           controllers.Application.index()
 
+GET     /:login						controllers.Application.authorizedIndex(login:String)
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
+POST    /login/:step                controllers.Application.submit(step:Int)
+
 #Saving new User
-POST    /login                              controllers.Application.saveUser()
+POST    /login                      controllers.Application.saveUser()
+
+#Authorization
+POST    /login                      controllers.Application.authorizeUser()		

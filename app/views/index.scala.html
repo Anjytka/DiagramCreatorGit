@@ -1,4 +1,4 @@
-@(userForm: Form[userModel])
+@(login:String, userForm: Form[userModel])
 
 @import helper._
 
@@ -11,19 +11,28 @@
 				<div class="collapse navbar-collapse">
 					<a class="brand" href=""></a>
 					<form class="navbar-form pull-right">
+							@if(login == "") {
 							<a data-toggle="modal" data-target="#regDialog">
 						    	Регистрация
 				    		</a>
 						    <a  data-toggle="modal" data-target="#entDialog">
 						   		Вход
 						   	</a>
+						   	} else {
+						   		<a>
+							    	@login
+					    		</a>
+							    <a href="@routes.Application.index">
+							   		Выход
+							   	</a>
+						   	}
 						</form>
 				</div>
 			</div>
 			</div>
 		</div>
 		
-    	<div class="modal fade" id="regDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal fade" id="regDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 		    <div class="modal-content">
 		      <div class="modal-header">
@@ -34,7 +43,7 @@
 		        @form(routes.Application.saveUser()) {
 				    @inputText(userForm("login"),
 				    		'_label -> "Логин",
-                			'_help -> "Введите пароль")
+                			'_help -> "Введите логин")
                 	@inputText(userForm("email"),
                 			'_label -> "Email",
                 			'_help -> "Введите адрес электронной почты")
@@ -42,10 +51,42 @@
 				    		'_label -> "Пароль",
                 			'_help -> "Минимальная длинна пароля 8 символов")
 				    <input type="submit" value="Создать">
+				    <input type="button" class="cancelBtn" value="Отменить">
 				}
 		      </div>
 		    </div>
 		  </div>
 		</div>
+		
+		<div class="modal fade" id="entDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        <h4 class="modal-title" id="myModalLabel">Вход</h4>
+		      </div>
+		      <div class="modal-body">
+		        @form(routes.Application.authorizeUser()) {
+				    @inputText(userForm("login"),
+				    		'_label -> "Логин",
+                			'_help -> "Введите логин")
+                	@inputText(userForm("password"),
+				    		'_label -> "Пароль",
+                			'_help -> "Введите пароль")
+				    <input type="submit" value="Вход">
+				    <input type="button" class="cancelBtn" value="Отменить">
+				}
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+	<script type="text/javascript" charset="utf-8">
+		
+		$(".cancelBtn").click(function(){
+			$("div.in").attr("class","modal fade").attr("aria-hidden","true");
+		});
+	
+	</script>
 
 }
